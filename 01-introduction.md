@@ -3,30 +3,30 @@ layout: default
 ---
 # 01. Introduction
 
-First, let’s create a new project and call it **SEIntro**:
-1.  Open **Visual Studio 2019**
-2.  Select menu **File > New > Project**
-3.  Select **Installed > Visual C# > Space Engineers > Ingame Script**
-4.  Give it name **SEtut1**
-5.  Click **OK** and then **Create New Project**
+First, let’s create a new project and call it `SEIntro`:
+1.  Open `Visual Studio 2019`
+2.  Select menu `File > New > Project`
+3.  Select `Installed > Visual C# > Space Engineers > Ingame Script`
+4.  Give it name `SEtut1`
+5.  Click `OK` and then `Create New Project`
 
 There are two types of comments in C# – single-line and multi-line.
 Single-line comments are created using double slash.
 ```csharp
 // This is a single-line comment
 ```
-Multi-line comments start with **/\*\*** and end with **\*\*/**
+Multi-line comments start with `/**` and end with `**/`.
 ```csharp
 /**
  * This is a multi-line comment
  **/
 ```
 
-Below is the contents of the **Program.cs** file that you’re presented with in a new project. In this example 
+Below is the contents of the `Program.cs` file that you’re presented with in a new project. In this example 
 I left comments that are generated automatically with a new project as single-line comments, and also added 
 multi-line comments to explain some other things.
 
-{% highlight csharp linenos %}
+```csharp
 /**
  * These statements declare what namespaces and classes your script
  * requires.
@@ -68,7 +68,6 @@ namespace IngameScript
      **/
     partial class Program : MyGridProgram
     {
-
         // This file contains your actual script.
         //
         // You can either keep all your code here, or you can create separate
@@ -166,4 +165,4 @@ namespace IngameScript
         }
     }
 }
-{% endhighlight %}
+```
