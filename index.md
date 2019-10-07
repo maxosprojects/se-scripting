@@ -3,4 +3,7 @@ layout: default
 ---
 # Table of contents
 - [01. Introduction](01-introduction)
-- [02. First Script](02-first-script)
+- [02. First script](02-first-script)
+- [03. Program a drone](03-program-a-drone)
+- [04. Basic colorful runway](04-basic-colorful-runway)
+- [05. Advanced colorful runway, take 1](05-advanced-colorful-runway-take-1)
