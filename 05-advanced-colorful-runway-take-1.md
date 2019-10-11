@@ -11,7 +11,7 @@ In order to achieve the goal we will need to do two things:
 1. Set up initial light colors to create a "wave"
 2. Update color of each individual light similar to the [Basic colorful runway created in part 4](04-basic-colorful-runway).
 
-Those two features will make the waves go smooth (meaning without sudden color changes) and eternally (well, as far as the battery isn't drained in creative mode, and the lights' warranty doesn't expire :wink:).
+Those two features will make the waves go smooth (meaning without sudden color changes) and eternally (well, as far as the battery isn't drained in creative mode, and the lights' warranty doesn't expire 😃).
 
 So, let's jump right to it!
 
