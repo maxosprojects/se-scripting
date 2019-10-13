@@ -3,21 +3,21 @@ layout: default
 ---
 # 06. Advanced colorful runway, or "Objects rule!"
 
-Now that we have an idea how to make a "wavy" runway, we can look at how we can improve the code.
-There is a great way to simplify the code by "encapsulating" logic and certain variables into a separate "module".
+Now that we have an idea how to make a "wavy" runway, we can look at how we can improve the code so it is easier to maintain (fix or tweak) and update (add new features).
+There is a great way to simplify the code by "encapsulating" logic and certain variables into separate units.
 "Encapsulation" means isolating logic and variables from the rest of the program.
-"Module" means a separate unit that implements some logic and has an internal state that is not directly accessible from outside of that module.
 
 We are talking about Classes.
 We've seen classes before.
 `Program` is a class (because it literally says `class Program`).
-It has class variables and methods.
+It has class variables (also called properties) and methods (also called behaviors).
 It also has a constructor.
 
-Without getting too deep into C# semantics by defining "visibility" of class variables and methods, let's just say that it is a bad practice to access class variables from outside the class.
-That is because class variables represent internal state of an object.
 Reminder - an object is an instance of a class that can be obtained by instantiating a class using the `new` keyword and calling the class's constructor, like `MyObjectClass myObject = new MyObjectClass()`.
-So, preferred way to interact with an object is via its methods.
+Also, classes can be seen as templates which are used to create objects (instances of classes).
+One class can be used to create many objects, and all those objects will have their own copies of properties (variables) and behaviors (methods).
+
+<div style="text-align:center"><img src="assets/img/06-dog-class-vs-objects.png" /></div>
 
 So, let's create a new project `SEtut6` and copy the program we've got in the `SEtut5` project into the new project.
 Now, let's see what we can extract from the existing program that seems to be closely associated.
