@@ -38,19 +38,19 @@ Let's create a new MDK Utility class and call it `LightKeeper`, it'll handle eve
 Follow the pictures below to create `LightKeeper` class.
 First, right click on the `SEtut6` project in the right panel, then select `Add` in the popup menu and click `New Item` in another popup menu.
 
-![Initial wave](assets/img/06-vs-add-class.png)
+![Add class](assets/img/06-vs-add-class.png)
 
 In the window that shows up select `Space Engineers > ProgrammableBlock` section, select `Utility Class` and enter file name `LightKeeper.cs`.
 
-![Initial wave](assets/img/06-vs-select-and-name-class.png)
+![Name class](assets/img/06-vs-select-and-name-class.png)
 
 The result of that would be a new file `LightKeeper.cs` that would be opened in a new tab along the original `Program.cs`
 
-![Initial wave](assets/img/06-vs-file-tabs.png)
+![File tabs](assets/img/06-vs-file-tabs.png)
 
 and the same file will show up in the "Solution Explorer" on the right.
 
-![Initial wave](assets/img/06-vs-solution-explorer-classes.png)
+![File in solution explorer](assets/img/06-vs-solution-explorer-classes.png)
 
 We are going to add something to the `LightKeeper` class and we don't care much about everything else that it is wrapped in.
 That everything else should be still there, but we will omit it in the following code snippets for brevity.
@@ -96,6 +96,7 @@ Then, in constructor, we still need the code that does the following (leave as i
 - get the `Runway Lights` group
 - populate the moved `light` list with the lights from the group
 - sort the `lights` list
+- leave only one line of lights in the `lights` list and filter out the rest (`lights = lights.Where((x, i) => i % 2 == 0).ToList()`)
 - declare `currentColorValue` variable
 
 Then, the first loop that initially went over all the lights and set the initial wave, will need a small addition.
@@ -103,10 +104,8 @@ Since we need to encapsulate lights into their corresponding `LightKeeper`s and 
 So, first, let's create a `LightKeeper` for each of the lights and add them to the `keepers` list.
 
 ```csharp
-LightKeeper keeper1 = new LightKeeper(light1);
-LightKeeper keeper2 = new LightKeeper(light2);
-keepers.Add(keeper1);
-keepers.Add(keeper2);
+LightKeeper keeper = new LightKeeper(light);
+keepers.Add(keeper);
 ```
 
 Since all the `increments` were consumed by the `LightKeeper` instances and we removed that `increments` list, we no longer need that second loop in the `Program` constructor that populated `increments` list.
@@ -114,7 +113,7 @@ Since all the `increments` were consumed by the `LightKeeper` instances and we r
 It already starts to clean up the code a little bit.
 But the best part is ahead.
 
-Most of the logic (which is implemented with code) that updates lights' colors in the `Main` method, needs to migrate to the `LightKeeper` class as that is what it was created for in the first place.
+Most of the logic (which is implemented with code) that updates lights' colors in the `Main` method needs to migrate to the `LightKeeper` class as that is what it was created for in the first place.
 But, that code first needs a place to stay.
 So, in the `LightKeeper` class create a method called `tick` that takes no arguments and returns no type (i.e. returns `void`) and in the body of that method implement the following pseudo-code.
 
@@ -138,8 +137,8 @@ int red = light.Color.R;
 
 Ok, good, now the best part!
 Since the logic that keeps track of the increment of a particular light sits together with the light itself in `LightKeeper` objects, the only thing left to do is to call the `tick` method on every `LightKeeper` object.
-Since we only need to go over every element of the `keepers` array and no longer need any index in the `Main` method, we can replace everything in the `Main` method with a simple `foreach` loop. We need to do exactly what was done in [part 2, First script](02-first-script), except the list is `keepers` in this case and the type of the variable would be `LightKeeper`.
-Of course it makes sense to name that loop variable `keeper` instead of `light`.
+Since we only need to go over every element of the `keepers` list and no longer need any index in the `Main` method, we can replace everything in the `Main` method with a simple `foreach` loop. We need to do exactly what was done in [part 2, First script](02-first-script), except the list is `keepers` in this case and the type of the variable would be `LightKeeper`.
+Of course it makes sense to name that loop variable `keeper` instead of `light` too.
 Then in the body of the `foreach` loop we only need to call method `tick` on the `keeper` object.
 
 And that is it!
@@ -160,7 +159,7 @@ In the `tick` method we do the following:
 - in case red component is out of range we negate the `increment` class variable
 - add `increment` to the red component
 - find blue component based on the value of red component
-- apply new color to the `light`
+- apply new color to the `light` using the calculated red and blue components
 
 In the main method we only go through every keeper and call their `tick` methods.
 
