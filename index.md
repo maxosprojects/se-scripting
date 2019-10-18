@@ -8,3 +8,4 @@ layout: default
 - [04. Basic colorful runway](04-basic-colorful-runway)
 - [05. Advanced colorful runway, take 1](05-advanced-colorful-runway-take-1)
 - [06. Advanced colorful runway, or "Objects rule!"](06-advanced-colorful-runway-objects-rule)
+- [07. The Manager](07-the-manager)
