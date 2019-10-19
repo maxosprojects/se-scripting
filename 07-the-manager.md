@@ -157,7 +157,7 @@ namespace IngameScript
             lights.Sort((x, y) => x.DisplayNameText.CompareTo(y.DisplayNameText));
             lights = lights.Where((x, i) => i % 2 == 0).ToList();
 
-            // Assign "manager" and new instance of LightKeeperManager class.
+            // Assign "manager" a new instance of LightKeeperManager class.
         }
 
         public void Main(string argument, UpdateType updateSource)
