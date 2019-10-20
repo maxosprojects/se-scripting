@@ -20,7 +20,7 @@ namespace IngameScript
     partial class Program : MyGridProgram
     {
         List<IMyInteriorLight> lights = new List<IMyInteriorLight>();
-        int red = 255;
+        int red = 254;
         int blue = 0;
         int red1 = -2;
         int blue1 = 2;
@@ -51,7 +51,7 @@ namespace IngameScript
             {
                 red1 = 2;
             }
-            if (red.Equals(255))
+            if (red.Equals(254))
             {
                 red1 = -2;
             }
@@ -59,7 +59,7 @@ namespace IngameScript
             {
                 blue1 = 2;
             }
-            if (blue.Equals(255))
+            if (blue.Equals(254))
             {
                 blue1 = -2;
             }
