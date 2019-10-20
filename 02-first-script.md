@@ -36,6 +36,21 @@ file of the `SEtut2` project.
 ```csharp
 namespace IngameScript
 {
+    /**
+     * Curly brackets come in pairs - one opening curly bracket and corresponding closing
+     * curly bracket.
+     * "Corresponding" here means that each closing curly bracket closes the latest
+     * opening curly bracket.
+     * Each pair of curly brackets defines a scope.
+     * Scope is a segment of code that defines where local variables are visible (or 
+     * accessible). If a local variable is declared between a pair of curly brackets, it is
+     * not accessible outside that pair of curly brackets.
+     * 
+     * Segments of code can be nested, i.e. one segment can be nested in another.
+     * For instance, in the code below the segment of code defined by the constructor,
+     * which starts with "public Program()", is nested into the segment defined by the
+     * class, which starts with "partial class Program : MyGridProgram".
+     **/
     partial class Program : MyGridProgram
     {
         // This is a constant. It cannot be changed programmatically.
@@ -44,12 +59,34 @@ namespace IngameScript
         // all uses throughout the code.
         private const string RUNWAY_LIGHTS = "Runway Lights";
 
-        // This is a variable. The object that will be created from Program class will have
-        // that variable available for you to change in methods.
+        // The line below is called a "statement". There are different kinds of statements.
+        // The constant declaration above is the same kind of statement as the declaration
+        // of "index" variable below.
+        //
+        // That statement below has two parts - the part to the left and the part to the
+        // right part from the equals sign.
+        //
+        // The left side of the statement declares a variable named "index" to be
+        // of type "int" (for "integer") and to be "private".
+        // The right side of the statement defines the value that is assigned to the
+        // variable with the equals sign.
+        //
         // The name "index" suggests that it will point to something.
+        //
+        // The "private" keyword makes this variable visible only in scope of the
+        // "Program" class.
         private int index = 0;
 
         // This is a list. It will contain all runway lights for you to manipulate.
+        //
+        // The left side of the statement declares the list and the type of variables
+        // that will be stored in that list (IMyInteriorLight).
+        // The right side of the statement creates a new instance of the "List" (also
+        // called "object).
+        //
+        // The equals sign assigns that new object to the variable "interiorLights".
+        // Without the right side of the statement the "interiorLights" variable wouldn't
+        // have anything assigned to it and, hence, couldn't be used anywhere in the code.
         private List<IMyInteriorLight> interiorLights = new List<IMyInteriorLight>();
 
         public Program()
@@ -72,8 +109,8 @@ namespace IngameScript
             interiorLights.Sort((x, y) => x.DisplayNameText.CompareTo(y.DisplayNameText));
 
             // This is one of the loop constructs available in C#. There are others.
-            // In this case we iterate over the runway lights list getting each of the lights
-            // one by one and disable them.
+            // In this case we iterate over the runway lights list, by getting each of the
+            // lights one by one, and disable each of them.
             foreach (IMyInteriorLight light in interiorLights)
             // These braces (or curly brackets) define the body of the loop.
             // Variable "light" is only available in the body of the loop and not outside of it.

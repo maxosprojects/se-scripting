@@ -60,11 +60,11 @@ namespace IngameScript
 {
     /**
      * This is a class called Program.
-     * It extends another class called MyGridProgram.
+     * It extends another class - "MyGridProgram". You will learn what "extends"
+     * means in the following tutorials.
      * 
-     * In Programmable Blocks you mostly won't use classes.
-     * The methods inside this class (Program, Save and Main) are used
-     * in Programmable Blocks and constitute a script.
+     * Methods inside this class (Program, Save and Main) are used in Programmable
+     * Blocks and constitute a script.
      **/
     partial class Program : MyGridProgram
     {
