@@ -1,0 +1,19 @@
+Id,Name,Shape Library,Page ID,Contained By,Group,Line Source,Line Destination,Source Arrow,Destination Arrow,Text Area 1,Text Area 2,Text Area 3
+1,Page,,,,,,,,, Blank UML,,
+2,Class,UML,1,,,,,,,Program,- managers: List<Manager>,"+ Program()
++ Main()"
+3,Class,UML,1,,,,,,,ColorfulManager,- keepers: List<ColorfulLightKeeper>,"+ ColorfulManager(List<IMyInteriorLight>)
++ tick()"
+4,Class,UML,1,,,,,,,ColorfulLightKeeper,"- light: IMyInteriorLight
+- increment: int","+ ColorfulLightKeeper(IMyInteriorLight)
++ tick()"
+5,Class,UML,1,,,,,,,"<<interface>>
+Manager",tick(),
+6,Class,UML,1,,,,,,,TogglingManager,"- lights: List<IMyInteriorLight>
+- index: int = 0
+- counter: int = 0","+ TogglingManager(List<IMyInteriorLight>)
++ tick()"
+7,Line,,1,,,2,5,Aggregation,None,0..*,,
+8,Line,,1,,,3,4,Aggregation,None,0..*,,
+9,Line,,1,,,3,5,None,Generalization,,,
+10,Line,,1,,,6,5,None,Generalization,,,
