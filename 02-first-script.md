@@ -1,7 +1,7 @@
 ---
 layout: default
+title: 02. First script
 ---
-# 02. First script
 
 Now it's time to write your first script.
 

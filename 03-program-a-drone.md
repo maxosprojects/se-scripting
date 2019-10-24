@@ -1,7 +1,7 @@
 ---
 layout: default
+title: 03. Program a drone
 ---
-# 03. Program a drone
 
 This time we're going to program a drone to fly and pick up resources from one place and drop them off in another.
 This is a fairly simple task as SE already provides an autopilot function implemented in Remote Control (__RC__) blocks.

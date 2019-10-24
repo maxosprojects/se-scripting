@@ -1,7 +1,7 @@
 ---
 layout: default
+title: 01. Introduction
 ---
-# 01. Introduction
 
 First, let’s create a new project and call it `SEIntro`:
 1.  Open `Visual Studio 2019`

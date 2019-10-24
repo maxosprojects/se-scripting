@@ -1,7 +1,8 @@
 ---
 layout: default
+title: Table of contents
 ---
-# Table of contents
+
 - [01. Introduction](01-introduction)
 - [02. First script](02-first-script)
 - [03. Program a drone](03-program-a-drone)

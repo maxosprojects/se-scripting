@@ -1,7 +1,7 @@
 ---
 layout: default
+title: 04. Basic colorful runway
 ---
-# 04. Basic colorful runway
 
 Let's go back to your first script where you had set up a runway with lights turning on and off in waves to make it noticeable from a few kilometers away.
 We are going to make a similar runway, except this one will gradually change colors from blue to red and back. No waves yet.

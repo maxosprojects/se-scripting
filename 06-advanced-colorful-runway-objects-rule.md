@@ -1,7 +1,7 @@
 ---
 layout: default
+title: 06. Advanced colorful runway, or "Objects rule!"
 ---
-# 06. Advanced colorful runway, or "Objects rule!"
 
 Now that we have an idea how to make a "wavy" runway, we can look at how we can improve the code so it is easier to maintain (fix or tweak) and update (add new features).
 There is a great way to simplify the code by "encapsulating" logic and certain variables into separate units.

@@ -1,7 +1,7 @@
 ---
 layout: default
+title: 08. Mixed runway demo or "Interfaces to the rescue!"
 ---
-# 08. Mixed runway demo or "Interfaces to the rescue!"
 
 Let's say we've decided to sell different models of runways.
 So far we've got two models: the very first one, where the lights were only toggled on and off, and the latest - colorful model.
@@ -31,10 +31,9 @@ There are several kinds of class blocks in UML.
 In the example diagram above we can see blocks with different number of sections and different decorations.
 They are all still classes.
 The difference in sections is that it wasn't important what is in the `Collar` or `Command` classes, so all the sections were omitted except the __mandatory__ one - the __name section__.
-Also, `<<interface>>` is a special kind of class that can't have any class variables.
+Also, `<<Interface>>` is a special kind of class and usually only has methods.
 
-When __two sections__ are present in a class block, the first section always has the name of the class and the second section always has class variables.
-`<<interface>>` is an exception from this rule for the reason pointed above.
+When __two sections__ are present in a class block, the first section always has the name of the class and the second section always has class variables..
 
 When __three sections__ are present in a class block, the first two sections are the same as in the two-section block and the third section always has methods.
 
@@ -105,7 +104,7 @@ First, let's add an interface and name it `Manager`.
 Next, declare method `tick` without return type and without arguments.
 Two things to remember about methods declared in an interface:
 - they can never have body
-- they can never have access level specified (e.g. `public` or `private`).
+- they are usually public.
 
 Here is the result:
 

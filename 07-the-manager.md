@@ -1,7 +1,7 @@
 ---
 layout: default
+title: 07. The Manager
 ---
-# 07. The Manager
 
 Great work with encapsulation in [part 6](06-advanced-colorful-runway-objects-rule)! Keep it up!
 

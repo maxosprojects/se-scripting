@@ -1,7 +1,7 @@
 ---
 layout: default
+title: 05. Advanced colorful runway, take 1
 ---
-# 05. Advanced colorful runway, take 1
 
 Based on our previous [Basic colorful runway created in part 4](04-basic-colorful-runway) we are going to make the colors change in waves instead of all together.
 
