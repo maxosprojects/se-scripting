@@ -25,7 +25,7 @@ Thankfully, there is a better way that has been practiced for decades - flowchar
 
 Here is an example of a simple flowchart depicting a method/function that reads two integers (from keyboard, for instance) and prints out their sum.
 
-![Example flowchart diagram](assets/img/09-algorithm-example.png)
+![Example flowchart diagram](assets/img/09-algorithm-example.png){: .center-image }
 
 Let's break it down.
 
@@ -73,9 +73,44 @@ That means that solution must produce four `List`s of `IMyInteriorLight`.
 
 Let's look at how the lights are arranged on the runway.
 
+![Runway lights arrangement](assets/img/09-runway-lights-arrangement.png){: .center-image }
 
+As we can see, one line of lights is made of lights with odd numbers and the other of even numbers.
+Let's look at the list of lights that we retrieve and sort in `Program`'s constructor.
+
+```csharp
+List<IMyInteriorLight> lights = new List<IMyInteriorLight>();
+IMyBlockGroup group = GridTerminalSystem.GetBlockGroupWithName("Runway Lights");
+group.GetBlocksOfType(lights);
+lights.Sort((x, y) => x.DisplayNameText.CompareTo(y.DisplayNameText));
+```
+
+As the result, list `lights` is sorted by name (i.e. "Light 01", "Light 02", ...) and the following mapping between indexes in the list and line numbers can be observed.
+
+| index | light number |
+|-------|--------------|
+| 0     | 01           |
+| 1     | 02           |
+| 2     | 03           |
+| ...   | ...          |
+| 46    | 47           |
+| 47    | 48           |
+
+We can disregard light names and instead address lights by their indexes.
+In that case they are arranged by index as follows.
+
+![Runway lights arrangement by index](assets/img/09-runway-lights-arrangement-by-index.png){: .center-image }
+
+Now, the first line 
 
 Here is the algorithm that needs to be implemented 
+
+
+
+
+
+
+
 
 
 
