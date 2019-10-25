@@ -45,4 +45,4 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - diagrams
+  - assets/diagrams
