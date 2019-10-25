@@ -17,7 +17,7 @@ Reminder - an object is an instance of a class that can be obtained by instantia
 Also, classes can be seen as templates which are used to create objects (instances of classes).
 One class can be used to create many objects, and all those objects will have their own copies of properties (variables) and behaviors (methods).
 
-<div style="text-align:center"><img src="assets/img/06-dog-class-vs-objects.png" /></div>
+![Dog class and its instances](assets/img/06-dog-class-vs-objects.png){: .center-image }
 
 So, let's create a new project `SEtut6` and copy the program we've got in the `SEtut5` project into the new project.
 Now, let's see what we can extract from the existing program that seems to be closely associated.
@@ -38,19 +38,19 @@ Let's create a new MDK Utility class and call it `LightKeeper`, it'll handle eve
 Follow the pictures below to create `LightKeeper` class.
 First, right click on the `SEtut6` project in the right panel, then select `Add` in the popup menu and click `New Item` in another popup menu.
 
-![Add class](assets/img/06-vs-add-class.png)
+![Add class](assets/img/06-vs-add-class.png){: .center-image }
 
 In the window that shows up select `Space Engineers > ProgrammableBlock` section, select `Utility Class` and enter file name `LightKeeper.cs`.
 
-![Name class](assets/img/06-vs-select-and-name-class.png)
+![Name class](assets/img/06-vs-select-and-name-class.png){: .center-image }
 
 The result of that would be a new file `LightKeeper.cs` that would be opened in a new tab along the original `Program.cs`
 
-![File tabs](assets/img/06-vs-file-tabs.png)
+![File tabs](assets/img/06-vs-file-tabs.png){: .center-image }
 
 and the same file will show up in the "Solution Explorer" on the right.
 
-![File in solution explorer](assets/img/06-vs-solution-explorer-classes.png)
+![File in solution explorer](assets/img/06-vs-solution-explorer-classes.png){: .center-image }
 
 We are going to add something to the `LightKeeper` class and we don't care much about everything else that it is wrapped in.
 That everything else should be still there, but we will omit it in the following code snippets for brevity.
@@ -165,4 +165,4 @@ In the main method we only go through every keeper and call their `tick` methods
 
 Enjoy the still working colorful waves 😃
 
-![Advanced colorful runway, take 1](assets/img/05-adv-col-runway-take1.gif)
+![Advanced colorful runway, take 1](assets/img/05-adv-col-runway-take1.gif){: .center-image }

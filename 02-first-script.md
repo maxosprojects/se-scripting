@@ -159,16 +159,16 @@ namespace IngameScript
 Now we need to produce actual script that `PB` will understand. You can find `Solution Explorer` on the right
 in Visual Studio. There, right click on the `SEtut2`.
 
-![Solution Explorer](assets/img/02-mdk-deploy1.png)
+![Solution Explorer](assets/img/02-mdk-deploy1.png){: .center-image }
 
 A popup menu will appear. Select `MDK Deploy Script`.
 
-![Deploy Menu](assets/img/02-mdk-deploy2.png)
+![Deploy Menu](assets/img/02-mdk-deploy2.png){: .center-image }
 
 Unless there errors in code, `MDK Deploy Script` will generate the script and show additional buttons that you
 can use to obtain the script. Click the `Copy script to the Clipboard` button.
 
-![Copy](assets/img/02-mdk-deploy3.png)
+![Copy](assets/img/02-mdk-deploy3.png){: .center-image }
 
 Now you can go to the Control Panel in SE, select the `PB`, click the `Edit` button and paste the script.
 
@@ -182,7 +182,7 @@ you to understand what is going on and how and then fix the bug where is says `/
 The runway must have the lights going on and off in "waves" forever. However, the bug prevents the waves from
 repeating. After all the lights turn on in the first wave, the `PB` will show an ugly error in the Control Panel.
 
-![Script Error](assets/img/02-script-error.png)
+![Script Error](assets/img/02-script-error.png){: .center-image }
 
 Have a look at this [simple introduction into conditionals](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/intro-to-csharp/branches-and-loops?tutorial-step=1). 
 And a little [more expanded version](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/intro-to-csharp/branches-and-loops?tutorial-step=2)

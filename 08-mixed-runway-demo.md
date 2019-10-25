@@ -23,7 +23,7 @@ The one we are going to use is called "class diagram".
 
 Here is an example of UML class diagram.
 
-![Example UML diagram](assets/img/08-uml-example-animal.png)
+![Example UML diagram](assets/img/08-uml-example-animal.png){: .center-image }
 
 Each of the blocks in the diagram is called "class", because they represent classes in the code.
 
@@ -73,7 +73,7 @@ Then, create all the same classes as we had in project `SEtut7` and copy their c
 Current state of our program is already composed of multiple classes, which makes it quite easy to refactor for our demo needs.
 But there is one component that is still missing.
 
-![UML current state](assets/img/08-uml-current.png)
+![UML current state](assets/img/08-uml-current.png){: .center-image }
 
 In order to be able to easily compose lights working in different modes we will need two different managers implement different logic based on the mode, but still have a `tick` method that would be called in the `Main` method.
 Moreover, we will not have different variables for different managers, as that won't be flexible. Instead we will have only one list of managers and both managers will be added there.
@@ -89,7 +89,7 @@ So, our list will contain a `Manager` type, which we will make an interface. Tha
 
 The diagram depicting the new structure is shown below.
 
-![UML multi-manager](assets/img/08-uml-multi-manager.png)
+![UML multi-manager](assets/img/08-uml-multi-manager.png){: .center-image }
 
 The diagram communicates two important statements:
 1. Any class that implements interface `Manager` can be added to the list `managers` (class `Program`).
@@ -99,7 +99,7 @@ So, let's get to it.
 
 First, let's add an interface and name it `Manager`.
 
-![Adding interface](assets/img/08-vs-select-and-name-interface.png)
+![Adding interface](assets/img/08-vs-select-and-name-interface.png){: .center-image }
 
 Next, declare method `tick` without return type and without arguments.
 Two things to remember about methods declared in an interface:

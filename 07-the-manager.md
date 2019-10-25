@@ -18,7 +18,7 @@ We now have `LightKeeper`s that do all the dirty work for us, but we still have 
 
 Here is a visualization of what we have right now vs what we want to get.
 
-<div style="text-align:center"><img src="assets/img/07-current-vs-future.png" /></div>
+![Current state vs future state](assets/img/07-current-vs-future.png){: .center-image }
 
 Clearly `Program` has too many responsibilities.
 Let's extract some of the responsibilities into a separate class - `LightKeeperManager`. Its only responsibility will be to set up and manage `LightKeeper`s. That includes setting up the lights for the `LightKeeper`s.
