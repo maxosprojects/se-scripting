@@ -147,7 +147,7 @@ List `line2` can be split exactly the same way into `line21` and `line22`.
 In order to avoid code duplication, let's create a method that implements the algorithm above.
 
 ```csharp
-private List<IMyInteriorLight> splitInTwoHalves(
+private void splitInTwoHalves(
   List<IMyInteriorLight> srcList, 
   List<IMyInteriorLight> destList1, 
   List<IMyInteriorLight> destList2)
