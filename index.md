@@ -11,3 +11,4 @@ title: Table of contents
 - [06. Advanced colorful runway, or "Objects rule!"](06-advanced-colorful-runway-objects-rule)
 - [07. The Manager](07-the-manager)
 - [08. Mixed Runway Demo](08-mixed-runway-demo)
+- [09. Demo upgrade](09-demo-upgrade)
