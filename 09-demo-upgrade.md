@@ -142,7 +142,7 @@ The algorithm to do that is also quite simple.
 The algorithm above splits list `line1` into two lists `line11` and `line12`.
 List `line2` can be split exactly the same way into `line21` and `line22`.
 
-In order to avoid code duplication, let's create a method that implements the algoritm above.
+In order to avoid code duplication, let's create a method that implements the algorithm above.
 
 ```csharp
 private List<IMyInteriorLight> splitInTwoHalves(
@@ -164,7 +164,7 @@ splitInTwoHalves(line1, line11, line12);
 splitInTwoHalves(line2, line21, line22);
 ```
 
-And the last thing to do is to set up managers for each of the four lines.
+Next, set up managers for each of the four lines.
 
 ```csharp
 managers.Add(new ColorfulManager(line11));
@@ -173,4 +173,13 @@ managers.Add(new ColorfulManager(line21));
 managers.Add(new TogglingManager(line22));
 ```
 
-There you go, we've got four lines of lights working in different modes on one runway.
+There is one problem with the ColorfulManager, though.
+In case you didn't fix that in scope of [part 8](08-mixed-runway-demo), there is still `ColorDiff` class variable.
+The problem with that variable is that it is calculated based on constant number of lights in the line - `24`.
+To fix that problem, `24` must be replaced with the number of elements in the list.
+However, that can't be done right where the variable is declared as it is unknown how many elements are in the list when variables are initialized.
+Taking into account that `ColorDiff` is only needed in the constructor upon initialization of the line, then we can move that variable into constructor and use the number of elements in the list of lights that is passed instead of constant `24`.
+
+Once that is done, try the script in the game.
+
+Great job!
