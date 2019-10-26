@@ -82,6 +82,8 @@ First, we're going to implement the algorithm to arrange two lines of lights int
 Let's replace contents of `Program`s constructor with the following.
 
 ```csharp
+Runtime.UpdateFrequency = UpdateFrequency.Update1;
+
 List<IMyInteriorLight> lights = new List<IMyInteriorLight>();
 IMyBlockGroup group = GridTerminalSystem.GetBlockGroupWithName("Runway Lights");
 group.GetBlocksOfType(lights);
