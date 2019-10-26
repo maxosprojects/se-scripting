@@ -124,7 +124,7 @@ The result of that would be two lists populated with lights that belong to corre
 
 In practice (in actual code), in this specific case we would use `for` loop with corresponding initial value, condition and increment like we did before many times.
 
-The remainder from integer division is quite simple concept - divide one integer by another integer and the remainder is the result we're interested in.
+The remainder from integer division is quite a simple concept - divide one integer by another integer and the remainder is the result we're interested in.
 That operation is represented in C# with symbol `%` (percent sign).
 Here's a few examples:
 
@@ -135,7 +135,7 @@ Here's a few examples:
 
 So, remainder from integer division of any number by `2` always produces remainder `0` for even numbers and remainder `1` for odd numbers.
 
-Now, we need to split each of the lists in two halves to reach the ultimate goal - four `List`s of `IMyInteriorLight`
+Now, we need to split each of the lists in two halves to reach the ultimate goal - four `List`s of `IMyInteriorLight`.
 
 The algorithm to do that is also quite simple.
 
