@@ -131,7 +131,7 @@ blue = ... red ...
 
 Check out what we've got so far. It should look like on the picture below.
 
-![Initial wave](assets/img/05-initial-wave.png)
+![Initial wave](assets/img/05-initial-wave.png){: .center-image }
 
 # Animating waves
 
@@ -207,4 +207,4 @@ In the part of the program that is executed every game tick (remember which that
 
 The result of all the hard work would be a runway animated with nice colorful waves.
 
-![Advanced colorful runway, take 1](assets/img/05-adv-col-runway-take1.gif)
+![Advanced colorful runway, take 1](assets/img/05-adv-col-runway-take1.gif){: .center-image }
