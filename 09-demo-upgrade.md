@@ -175,13 +175,51 @@ managers.Add(new ColorfulManager(line21));
 managers.Add(new TogglingManager(line22));
 ```
 
-There is one problem with the ColorfulManager, though.
+There are a few problems with the current code, though.
+
+## Current problem 1
+
+First problem is with the `ColorfulManager`.  
 In case you didn't fix that in scope of [part 8](08-mixed-runway-demo), there is still `ColorDiff` class variable.
 The problem with that variable is that it is calculated based on constant number of lights in the line - `24`.
 To fix that problem, `24` must be replaced with the number of elements in the list.
 However, that can't be done right where the variable is declared as it is unknown how many elements are in the list when variables are initialized.
 Taking into account that `ColorDiff` is only needed in the constructor upon initialization of the line, then we can move that variable into constructor and use the number of elements in the list of lights that is passed instead of constant `24`.
 
-Once that is done, try the script in the game.
+## Current problem 2
+
+Another problem is with the `ColorfulLightKeeper`, which has been there for a while and did not surface just because the initial colors of lights favored.  
+
+Here is what happened before and what has changed in this tutorial.
+
+`ColorDiff` in `ColorfulManager` was assigned the result of `255/24`. The result of division actually equals `10.625`, but since it was assigned to `ColorDiff`, which is an `int`, fractional portion was dropped and `ColorDiff` was actually assigned `10`.  
+The initial colors are calculated in `for` loop in `ColorfulManager`'s constructor as `red = red + ColorDiff` each iteration, which produced integer sequence `0, 10, 20, 30, ..., 230`, which were all even numbers.  
+After that, `ColorfulLightKeeper` either adds `2` to the red component of a light's color or subtracts `2` from it, but it always remained an even number.  
+
+So, here is why it worked before.  
+There are two conditions in `ColorfulLightKeeper` to change the sign of the `increment` value: `red <= 0` and `red == 254`.
+The former condition always works as expected, but the latter only works for value `254`, which is an even number.
+Since red component always remained an even number before, the latter condition worked just fine.
+
+But now, `ColorDiff` is calculated depending on the number of lights in the line that the manager receives, which is now `255/12`, or `21.25`, and with the fractional portion dropped, it is `21`.  
+
+Here is what went wrong in this part.  
+Initially red component of lights' colors are now set up following sequence `0, 21, 42, 63, ...`.
+That makes every other light have initial red component as even number, and others - odd numbers.
+With the same even value of the increment, some lights pass `254` condition and others don't.
+When PB is restarted, red components of all lights' colors go up, but only every other light's red component ever hits exactly `254`.  
+Since the value of a red component can't exceed `255`, the lights with initial odd value for red component hanged at the top value, and the others went up and down as expected.  
+That is why every other light that is managed by `ColorfulManager` always stays red and doesn't change color.
+
+To fix that problem, you need to change the condition in `ColorfulLightKeeper` to `red >= 254`.
+
+## Current problem 3
+
+Some lights in the area that `TogglingManager`s are responsible for, could still have different colors that were set by previous scripts.  
+At the same time, some lights that `ColorfulManager`s are responsible for, could still remain disabled as set by the previous scripts.
+
+Thankfully this isn't hard to fix. Just enable all the lights and set their colors to white in the `for` loop that goes over all lights in `Program`s constructor.
+
+Once everything is done, try the script in the game.
 
 Great job!
