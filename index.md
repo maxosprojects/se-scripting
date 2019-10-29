@@ -12,3 +12,7 @@ title: Table of contents
 - [07. The Manager](07-the-manager)
 - [08. Mixed Runway Demo](08-mixed-runway-demo)
 - [09. Demo upgrade](09-demo-upgrade)
+
+# Exercises
+
+- [ex-01. More Managers](ex-01-more-managers)
