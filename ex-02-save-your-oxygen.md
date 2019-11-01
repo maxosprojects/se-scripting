@@ -92,7 +92,7 @@ Here is a method you can add to your `Program` class to easily add messages to t
 ```csharp
 private void Print(string text, bool first = false)
 {
-  IMyTextPanel lcd = GridTerminalSystem.GetBlockWithName("LCD Panel") as IMyTextPanel;
+  IMyTextPanel lcd = GridTerminalSystem.GetBlockWithName("LCD Debug Panel") as IMyTextPanel;
   lcd.WriteText(text + "\n", !first);
 }
 ```
